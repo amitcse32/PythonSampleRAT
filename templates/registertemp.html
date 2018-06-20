@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register</title>
+</head>
+<body>
+<form action="/register" method="post">
+    {{ form.hidden_tag() }}
+
+    {% for message in form.userNameField.errors %}
+         <div>{{ message }}</div>
+    {% endfor %}
+
+
+    <table>
+        <tr>
+            <td>
+                Register As Admin
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <p>{{form.userNameField.label}}</p>
+            </td>
+            <td>
+                {{form.userNameField}}
+            </td>
+        </tr>
+
+        <tr>
+            <td colspan="2">
+                {{form.registerButtonField}}
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>
